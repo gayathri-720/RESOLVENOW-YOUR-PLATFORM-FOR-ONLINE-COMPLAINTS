@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h2 style="text-align:center">Admin Panel</h2>
+<table>
+<tr>
+    <th>Title</th>
+    <th>Status</th>
+    <th>Assign Agent</th>
+</tr>
+{% for c in complaints %}
+<tr>
+    <td>{{ c.title }}</td>
+    <td>{{ c.status }}</td>
+    <td>
+        <form method="post" action="/assign/{{ c.id }}">
+            <input type="text" name="agent" placeholder="Agent Name">
+            <button>Assign</button>
+        </form>
+    </td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

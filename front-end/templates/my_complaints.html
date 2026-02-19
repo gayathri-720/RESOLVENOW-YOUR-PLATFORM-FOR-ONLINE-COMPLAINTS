@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Complaints</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h2 style="text-align:center">My Complaints</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Agent</th>
+    </tr>
+    {% for c in complaints %}
+    <tr>
+        <td>{{ c.title }}</td>
+        <td>{{ c.status }}</td>
+        <td>{{ c.assigned_agent }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
